@@ -62,9 +62,9 @@ A **Binary Tree** has at most 2 children per node: left child and right child.
 A **stack** is Last-In-First-Out (LIFO).
 
 **Operations:**
-- `push(x)` — add to top
-- `pop()` — remove from top
-- `peek()` — see top without removing
+- `push(x)` - add to top
+- `pop()` - remove from top
+- `peek()` - see top without removing
 - If you pop from empty stack: **Underflow**
 - If you push to full stack: **Overflow**
 
@@ -97,14 +97,14 @@ A **stack** is Last-In-First-Out (LIFO).
 A **queue** is First-In-First-Out (FIFO).
 
 **Operations:**
-- `enqueue(x)` — add to rear
-- `dequeue()` — remove from front
+- `enqueue(x)` - add to rear
+- `dequeue()` - remove from front
 
 **Types:**
 - Simple Queue
 - Circular Queue
-- **Dequeue (Double-ended queue)** — can insert/delete from both ends ← appeared as "sequence container" in June 2023
-- Priority Queue — minimum queues needed to implement it: **2** ← appeared in June 2023
+- **Dequeue (Double-ended queue)** - can insert/delete from both ends ← appeared as "sequence container" in June 2023
+- Priority Queue - minimum queues needed to implement it: **2** ← appeared in June 2023
 
 **Applications of Queue:**
 - BFS algorithm uses a **Queue** ← appeared in June 2023
@@ -120,17 +120,17 @@ A **linked list** is a chain of nodes where each node has data and a pointer to 
 **Key facts:**
 - Elements are NOT stored contiguously in memory
 - No random access (unlike arrays)
-- Dynamic size — can grow/shrink
+- Dynamic size - can grow/shrink
 - Accessed via pointers
 
 **Types:**
-- **Singly linked list** — each node points to next
-- **Doubly linked list** — each node points to both next and previous
-- **Circular linked list** — last node points back to first node ← appeared in May 2023
+- **Singly linked list** - each node points to next
+- **Doubly linked list** - each node points to both next and previous
+- **Circular linked list** - last node points back to first node ← appeared in May 2023
 
 **Pointer notation for arrays:**
 - `*(a + 2)` is equivalent to `a[2]` ← appeared in May 2023
-- To access 2nd element: `*(a + 2)` — **Answer: d**
+- To access 2nd element: `*(a + 2)` - **Answer: d**
 
 **Worst case comparisons to search a singly linked list of length n:**
 - You may need to check every element → **n** comparisons ← appeared in June 2022 & Jan 2024
@@ -507,7 +507,7 @@ Array after first partition: 2 5 1 7 9 12 11 10
 - The pivot is an element that is in its final sorted position
 - 7 is at index 3, and all elements to its left (2,5,1) are smaller, all to right (9,12,11,10) are larger → 7 is the pivot
 - But 9 is at index 4, and 2,5,1,7 are all smaller, 12,11,10 are larger... wait.
-- Looking at: 2 5 1 7 9 12 11 10 — the pivot could be either 7 or 9
+- Looking at: 2 5 1 7 9 12 11 10 - the pivot could be either 7 or 9
 - **Answer: a) The pivot could be either the 7 or the 9**
 
 ### Bubble Sort Interchanges (June 2023)
@@ -528,8 +528,8 @@ A **graph** G = (V, E) has vertices V and edges E.
 - Example: n=4 vertices → 4×3/2 = 6 edges
 
 **Graph Traversals:**
-- **BFS (Breadth-First Search)** — uses a QUEUE; explores level by level
-- **DFS (Depth-First Search)** — uses a STACK; goes deep before backtracking
+- **BFS (Breadth-First Search)** - uses a QUEUE; explores level by level
+- **DFS (Depth-First Search)** - uses a STACK; goes deep before backtracking
   - Time complexity of DFS & BFS: **Θ(V + E)** 
 
 ---
@@ -718,10 +718,10 @@ Semaphore initial value = 10. Then 12 P operations and x V operations. Final val
 A deadlock occurs when processes are waiting for resources held by each other, and none can proceed.
 
 **4 Necessary Conditions for Deadlock (Coffman Conditions):**
-1. **Mutual Exclusion** — resources can't be shared
-2. **Hold and Wait** — process holds resource while waiting for another
-3. **No Preemption** — resources can't be forcibly taken
-4. **Circular Wait** — circular chain of processes waiting for each other
+1. **Mutual Exclusion** - resources can't be shared
+2. **Hold and Wait** - process holds resource while waiting for another
+3. **No Preemption** - resources can't be forcibly taken
+4. **Circular Wait** - circular chain of processes waiting for each other
 
 **Deadlock occurs when:** A process is unable to access a required resource indefinitely ← May 2023
 
@@ -729,23 +729,23 @@ A deadlock occurs when processes are waiting for resources held by each other, a
 Used to **prevent deadlock** ← appeared in June 2022 & Jan 2024
 
 **Key terms:**
-- **Max** — maximum resources a process may need
-- **Allocation** — currently allocated
+- **Max** - maximum resources a process may need
+- **Allocation** - currently allocated
 - **Need** = Max - Allocation
-- **Available** — currently free resources
+- **Available** - currently free resources
 
 **Safe State:** There exists at least one safe sequence in which all processes can complete.
 
 **Banker's Algorithm grants request if:**
 - Resources are immediately available, AND
 - Won't exceed maximum claim, AND
-- Won't exceed total available → "All of the above" ← May 2023
+- Won't exceed total available 
 
 **Banker's is applicable to:** Non-preemptive resource allocation ← May 2023
 
 ### Dining Philosophers Problem
 - 5 philosophers, 5 chopsticks
-- **Deadlock if all pick up left chopstick simultaneously** — then all wait for right ← May 2023
+- **Deadlock if all pick up left chopstick simultaneously** - then all wait for right ← May 2023
 - **Actually:** Deadlock if all try to pick up BOTH chopsticks simultaneously ← Answer: c
 - **Maximum philosophers who can eat simultaneously without deadlock = N-1** (where N is total) ← May 2023
 
@@ -762,6 +762,18 @@ Used to **prevent deadlock** ← appeared in June 2022 & Jan 2024
 **Segmentation:** Divides memory into **variable-sized** blocks ← May 2023
 - Used for efficient utilization with variable-sized memory allocation
 
+| Feature               | Internal Fragmentation                           | External Fragmentation                                  |
+| --------------------- | ------------------------------------------------ | ------------------------------------------------------- |
+| Definition            | Wasted space inside allocated memory block       | Free memory exists but is scattered into small blocks   |
+| Cause                 | Fixed-size memory allocation                     | Variable-size memory allocation                         |
+| Wasted Space Location | Inside allocated partition                       | Between allocated partitions                            |
+| Occurs In             | Fixed partitioning, *paging*                       | Dynamic partitioning, *segmentation*                     |
+| Memory Utilization    | Some allocated space remains unused              | Enough total memory may exist but not contiguous        |
+| Example               | Process needs 18 KB but gets 20 KB → 2 KB wasted | Free blocks of 5 KB + 7 KB cannot satisfy 10 KB request |
+| Solution              | Use smaller block size                           | Compaction or paging                                    |
+| Compaction Needed     | No                                               | Yes                                                     |
+| Paging Effect         | Causes internal fragmentation                    | Eliminates external fragmentation                       |
+
 ### Dirty Bit
 - A dirty bit indicates a **page has been modified after being loaded into cache** ← June 2022 & Jan 2024
 - Used in write-back caches: if dirty=1, page must be written back before eviction
@@ -770,36 +782,200 @@ Used to **prevent deadlock** ← appeared in June 2022 & Jan 2024
 - A hardware cache that speeds up virtual-to-physical address translation
 - In instruction pipeline: TLB can be accessed **after effective address calculation** ← June 2022
 
-**TLB Tag Size Calculation (June 2022):**
-- 32-bit virtual address, 4KB page (12 bits for offset)
-- Page number = 32-12 = 20 bits
-- TLB has 128 entries, 4-way set associative
-- Sets = 128/4 = 32 → need log₂(32) = 5 bits for set index
-- Tag bits = 20 - 5 = **15 bits** ← June 2022 Answer: c) 15 bits
+1. TLB Tag Size Calculation (June 2022)
+Question
+- Virtual address = 32 bits
+- Page size = 4 KB
+- TLB entries = 128
+- 4-way set associative
 
-**TLB tag size (June 2023):**
-- 64 pages with 512 bytes page size
-- Physical: 32 page frames
-- Logical address bits: log₂(64) + log₂(512) = 6 + 9 = **15 bits**
-- Physical address bits: log₂(32) + log₂(512) = 5 + 9 = **14 bits**
-- Answer: **c) 15 and 14** ← June 2023
+Find the TLB tag bits.
 
-### Page Table Entry Bits (June 2022)
-- Virtual: 32-bit, Physical: 30-bit, Page size: 4KB
-- Physical page number = 30 - 12 = 18 bits stored in page table entry
-- Page table entry is 32 bits
-- Bits for protection/other = 32 - 18 = **14 bits** ← Answer: d) 14
+Step 1: Find Page Offset Bits
 
-### Bits for Page Number Calculation (June 2023)
-Memory: 64 pages, 512 bytes each:
-- Logical address = log₂(64×512) = log₂(32768) = 15 bits
-- Physical: 32 frames × 512 = 16384 = 14 bits
-- **Answer: c) 15 and 14**
+Page size = 4 KB
+
+4 KB = 4096 bytes = 2^12
+
+So:
+
+Offset bits=12
+
+Step 2: Find Virtual Page Number Bits
+
+Virtual address = 32 bits
+
+Address format:
+
+| Page Number | Offset |
+
+So:
+
+32−12=20
+
+Thus:
+
+Virtual Page Number (VPN)=20 bits
+Step 3: Find Number of Sets in TLB
+
+Given:
+
+Total entries = 128
+4-way associative
+
+Formula:
+
+Sets=128/4=32
+
+Step 4: Find Set Index Bits
+
+Need bits to identify 32 sets.
+
+Formula:log2(32)=5
+
+So:
+
+Set index bits=5
+Step 5: Find TLB Tag Bits
+
+VPN bits are divided into:
+
+| Tag | Set Index |
+
+VPN = 20 bits
+
+Set index = 5 bits
+
+So:
+
+20−5=15
+Final Answer
+TLB Tag Bits = 15
+
+2. TLB / Address Size Question (June 2023)
+Question
+64 pages
+Page size = 512 bytes
+Physical memory = 32 page frames
+
+Find:
+
+Logical address bits
+Physical address bits
+
+Step 1: Logical Address Bits
+
+Logical address consists of:
+
+| Page Number | Offset |
+Page Number Bits
+
+64 pages
+
+64=2^6
+
+So:
+
+Page number bits=6
+Offset Bits
+
+Page size = 512 bytes
+
+512=2^9
+
+So:
+
+Offset bits=9
+Total Logical Address Bits
+6+9=15
+Logical Address = 15 bits
+Step 2: Physical Address Bits
+
+Physical address format:
+
+| Frame Number | Offset |
+Frame Number Bits
+
+32 page frames
+
+32=2^
+
+So:
+
+Frame bits=5
+Offset Bits
+
+Same page size:
+
+9 bits
+Total Physical Address Bits
+5+9=14
+Final Answer
+Address Type	Bits
+Logical Address	15
+Physical Address	14
+
+3. Page Table Entry Bits (June 2022)
+Question
+Virtual address = 32 bits
+Physical address = 30 bits
+Page size = 4 KB
+Page table entry size = 32 bits
+
+Find bits available for protection/other information.
+
+Step 1: Find Offset Bits
+
+Page size = 4 KB
+
+4KB=2^12
+
+So:
+
+Offset bits=12
+Step 2: Find Physical Page Number Bits
+
+Physical address = 30 bits
+
+Address format:
+
+| Physical Page Number | Offset |
+
+So:
+
+30−12=18
+
+Thus:
+
+Physical page number bits=18
+Step 3: Find Remaining Bits in Page Table Entry
+
+PTE size = 32 bits
+
+18 bits already used for physical page number.
+
+Remaining:
+
+32−18=14
+Final Answer
+Protection / Control Bits = 14
+
+## Important Concepts Summary
+| Concept          | Formula                   |
+| ---------------- | ------------------------- |
+| Offset bits      | log₂(page size)           |
+| Page number bits | log₂(number of pages)     |
+| Frame bits       | log₂(number of frames)    |
+| Logical address  | Page bits + Offset bits   |
+| Physical address | Frame bits + Offset bits  |
+| TLB sets         | Entries / Associativity   |
+| Set index bits   | log₂(number of sets)      |
+| Tag bits         | VPN bits − Set index bits |
 
 ### Page Replacement Algorithms
 **FIFO (First In First Out):**
 - Replace the oldest page
-- **Suffers from Belady's Anomaly** — more frames can cause MORE page faults ← Jan 2024
+- **Suffers from Belady's Anomaly** - more frames can cause MORE page faults ← Jan 2024
 - LRU does NOT suffer from Belady's anomaly
 
 **LRU (Least Recently Used):**
@@ -867,14 +1043,16 @@ A process copied from **main memory to secondary memory** on basis of requiremen
 
 **Addressing modes** determine how the operand address is calculated.
 
+# Addressing Modes
+
 | Mode | Description | Use | Example |
 |------|-------------|-----|---------|
-| **Immediate** | Operand IS in instruction | Constant values | SUB A, #10 → #10 is immediate |
-| **Direct** | Instruction contains address of operand | Local variables | |
-| **Indirect** | Instruction contains address of address | Pointers | |
-| **Index** | Base address + index register | Arrays | |
-| **Base/Base Register** | Base register + offset | Relocatable programs | |
-| **Relative** | PC + displacement | Locality of reference | |
+| **Immediate Addressing** | Operand value is directly present in the instruction | Used for constant values | `SUB A, #10` → `#10` is immediate data |
+| **Direct Addressing** | Instruction contains the memory address of the operand | Accessing fixed/local variables | `LOAD A, 5000` → data stored at memory address 5000 |
+| **Indirect Addressing** | Instruction contains address of another address that stores operand | Used with pointers | `LOAD A, (5000)` → 5000 contains address of actual data |
+| **Indexed Addressing** | Effective address = base address + index register | Used for arrays | `MOV A, ARRAY[R1]` |
+| **Base / Base Register Addressing** | Effective address = base register + offset | Used in relocatable programs | `MOV A, 20(R2)` |
+| **Relative Addressing** | Effective address = Program Counter (PC) + displacement | Used in branching and locality of reference | `BEQ +40` |
 
 **The famous matching question (appears in EVERY exam):**
 - a) Immediate → (6) Constant Operands
@@ -886,7 +1064,7 @@ A process copied from **main memory to secondary memory** on basis of requiremen
 - **Answer: a) a6 b1 c3 d5 e2 f4** ← appeared in June 2022, Jan 2024
 
 **Example of immediate addressing mode:**
-`SUB A, #10` — the #10 is the immediate operand ← May 2023 Answer: c) SUB A, #10
+`SUB A, #10` - the #10 is the immediate operand ← May 2023 Answer: c) SUB A, #10
 
 ---
 
@@ -1031,7 +1209,7 @@ What operation is this?
 **Pipeline hazards:**
 **Data Hazard:** Current instruction depends on result of previous instruction that hasn't completed ← May 2023 Answer: a
 
-**Control Hazard:** Branch instructions — next instruction unknown until branch resolved
+**Control Hazard:** Branch instructions - next instruction unknown until branch resolved
 **Structural Hazard:** Two instructions need same hardware resource simultaneously
 
 **To minimize control hazards:** Branch prediction ← May 2023 Answer: a) Branch prediction
@@ -1094,13 +1272,13 @@ Normalization removes data redundancy and anomalies by organizing data into tabl
 
 ### Second Normal Form (2NF)
 - Must be in 1NF
-- **No partial dependency** — every non-key attribute must depend on the ENTIRE primary key
+- **No partial dependency** - every non-key attribute must depend on the ENTIRE primary key
 - Applies when primary key is composite (multi-attribute)
 - A relation with a **single-attribute key is automatically in 2NF** ← Jan 2024 exam
 
 ### Third Normal Form (3NF)
 - Must be in 2NF
-- **No transitive dependency** — non-key attribute should not depend on another non-key attribute
+- **No transitive dependency** - non-key attribute should not depend on another non-key attribute
 - "Which normal form is based on transitive dependency? → **3NF**" ← June 2022
 
 ### Boyce-Codd Normal Form (BCNF)
@@ -1110,7 +1288,7 @@ Normalization removes data redundancy and anomalies by organizing data into tabl
 - If a relation is in BCNF, it is also in: **3NF, 2NF, 1NF** ← June 2023 Answer: b) 3NF
 
 **Important false statement (Jan 2024):**
-"The prime attribute can depend transitively on any key in the case of a relation that is in its BCNF" → This is **FALSE** — prime attributes cannot depend transitively in BCNF ← Answer: d (it's the FALSE option)
+"The prime attribute can depend transitively on any key in the case of a relation that is in its BCNF" → This is **FALSE** - prime attributes cannot depend transitively in BCNF ← Answer: d (it's the FALSE option)
 
 ### Normal Form of a Relation
 **May 2023:** R(A,B,C,D,E), FDs: {A→BC, CD→E, B→D, E→A}
@@ -1178,13 +1356,13 @@ Which FDs are satisfied?
 - SELECT, INSERT, UPDATE, DELETE
 
 **DCL (Data Control Language):**
-- **GRANT and REVOKE** — control access over objects ← June 2022 & Jan 2024 Answer: b
+- **GRANT and REVOKE** - control access over objects ← June 2022 & Jan 2024 Answer: b
 
 **To DELETE a relation (table):**
 - **DROP** command ← June 2022 Answer: a) Drop (DROP removes the entire table structure)
 - Note: DELETE removes rows; DROP removes the entire table
 
-### SQL Query Analysis (June 2022 — Nested Query)
+### SQL Query Analysis (June 2022 - Nested Query)
 ```sql
 SELECT S.sname
 FROM Suppliers S
@@ -1221,19 +1399,19 @@ Two: {(2,55), (1,1), (4,4), (1,6), (4,8), (4,8), (9,9), (1,6)}
 **EXCEPT:** Set difference (removes duplicates first)
 - One as set: {(2,5), (1,6), (4,8)}
 - Two as set: {(2,55), (1,1), (4,4), (1,6), (4,8), (9,9)}
-- One EXCEPT Two: {(2,5)} — 1 tuple
+- One EXCEPT Two: {(2,5)} - 1 tuple
 
 **EXCEPT ALL:** Multiset difference
 - (2,5) appears 1× in One, 0× in Two → keeps 1
 - (1,6) appears 3× in One, 2× in Two → keeps 1
 - (4,8) appears 2× in One, 2× in Two → keeps 0
-- Result: {(2,5), (1,6)} — 2 tuples
+- Result: {(2,5), (1,6)} - 2 tuples
 
 **Answer: b) 1 and 2, respectively** ← June 2022
 
 ### LIKE Query (May 2023)
 Find students whose name has 'p' as second letter:
-- `LIKE '_p%'` — underscore matches one character, then 'p', then anything
+- `LIKE '_p%'` - underscore matches one character, then 'p', then anything
 - **Answer: c) WHERE name LIKE '_p%'** ← Note: this is case-sensitive in some DBs
 
 ### SQL Queries with IN (Jan 2024)
@@ -1282,11 +1460,11 @@ S: R1(X); W1(X); R2(X); W2(X); R1(Y); R2(Y)
 Non-conflicting pair: **R1(X) and W2(X)** ... wait, they're on same item but both must be reads OR different items.
 Actually: R1(X) and W2(X) conflict (same item, one is write, different transactions).
 W1(X) and R2(X) conflict.
-**R1(Y) and R2(Y)** — both reads, same item, different transactions → NON-CONFLICTING ← Answer: but d) R1(x); W2(x)... 
+**R1(Y) and R2(Y)** - both reads, same item, different transactions → NON-CONFLICTING ← Answer: but d) R1(x); W2(x)... 
 
 Actually answer key says d) R1(x); w2(x). But R1(X) and W2(X) ARE conflicting (one read, one write, different transactions, same item). Hmm.
 
-Looking again: d) R1(x); w2(x) — in the schedule, R1(X) occurs at position 1 and W2(X) at position 4. But these DO conflict by definition. Perhaps the answer is d because there are no truly non-conflicting pairs involving X among the choices, and the "least conflicting" is chosen? Or perhaps R1(X) and W2(X) are considered because W2 happens after W1 has released... 
+Looking again: d) R1(x); w2(x) - in the schedule, R1(X) occurs at position 1 and W2(X) at position 4. But these DO conflict by definition. Perhaps the answer is d because there are no truly non-conflicting pairs involving X among the choices, and the "least conflicting" is chosen? Or perhaps R1(X) and W2(X) are considered because W2 happens after W1 has released... 
 
 The answer key says d) so we go with d) R1(x); W2(x).
 
@@ -1364,10 +1542,10 @@ Based on A_jan2024.pdf answer key showing Q19=d, and the options in Q-jan2024.pd
 ## 5.1 FORMAL LANGUAGES AND AUTOMATA BASICS
 
 ### The Chomsky Hierarchy (4 types of languages):
-1. **Type 3 — Regular Language** (most restricted) → recognized by Finite Automaton (FA/DFA/NFA)
-2. **Type 2 — Context-Free Language (CFL)** → recognized by Pushdown Automaton (PDA)
-3. **Type 1 — Context-Sensitive Language** → recognized by Linear Bounded Automaton (LBA)
-4. **Type 0 — Recursively Enumerable Language** (least restricted) → recognized by Turing Machine
+1. **Type 3 - Regular Language** (most restricted) → recognized by Finite Automaton (FA/DFA/NFA)
+2. **Type 2 - Context-Free Language (CFL)** → recognized by Pushdown Automaton (PDA)
+3. **Type 1 - Context-Sensitive Language** → recognized by Linear Bounded Automaton (LBA)
+4. **Type 0 - Recursively Enumerable Language** (least restricted) → recognized by Turing Machine
 
 **"Chomsky hierarchy classifies into how many levels?"** → **4** ← May 2023
 
@@ -1397,7 +1575,7 @@ A **Finite Automaton** (FA) is a machine with:
 ### NFA to DFA Conversion
 - Initial state of NFA = initial state of DFA ✓
 - Final states of DFA = any DFA state combination that INCLUDES an NFA final state
-- **"Final state of DFA will be every combination of final state of NFA"** — this is FALSE (it's any SUBSET that INCLUDES at least one NFA final state)
+- **"Final state of DFA will be every combination of final state of NFA"** - this is FALSE (it's any SUBSET that INCLUDES at least one NFA final state)
 
 **Statements:**
 - Statement 1: Initial State of NFA is Initial State of DFA → **TRUE**
@@ -1408,7 +1586,7 @@ A **Finite Automaton** (FA) is a machine with:
 ### ε-closure
 ε-closure(q) = set of all states reachable from q using only ε-transitions (including q itself)
 
-**"Number of elements in ε-closure(f2)"** — based on a diagram where from f2 you can only reach f2 itself via ε (or f2 and one more state):
+**"Number of elements in ε-closure(f2)"** - based on a diagram where from f2 you can only reach f2 itself via ε (or f2 and one more state):
 **Answer: c) 2** ← June 2022
 
 ### Can DFA Recognize a Palindrome?
@@ -1497,7 +1675,7 @@ Every production is either:
 - **A → a** (one terminal)
 
 **Productions that violate CNF:**
-- S → AAS (three symbols → violates CNF) — but wait, not just length, specifically not of form A→BC or A→a
+- S → AAS (three symbols → violates CNF) - but wait, not just length, specifically not of form A→BC or A→a
 - S → AAS has three symbols on RHS → violates CNF
 - A → aa → has two terminals, not one → violates? Actually A → aa is two terminals. CNF requires A → a (single terminal) or A → BC (two non-terminals). So A → aa violates.
 
