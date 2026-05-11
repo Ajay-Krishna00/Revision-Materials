@@ -165,42 +165,42 @@ This is very heavily tested. Know the complexities cold.
 **Minimum swaps:** Selection Sort minimizes swaps ← appeared in Jan 2024
 **When swap is costly:** Use **Selection Sort**
 
-# Sorting Algorithms Explained with Examples
+## Sorting Algorithms Explained with Examples
 
-## 1. Bubble Sort
+### 1. Bubble Sort
 
-### Definition
+#### Definition
 
 Bubble Sort repeatedly compares adjacent elements and swaps them if they are in the wrong order. Larger elements gradually move to the end of the list like bubbles rising to the surface.
 
-### Steps
+#### Steps
 
 1. Compare adjacent elements.
 2. Swap them if the left element is greater than the right element.
 3. Repeat until the array becomes sorted.
 
-### Example
+#### Example
 
 Array: `[5, 1, 4, 2, 8]`
 
-#### Pass 1
+##### Pass 1
 
 * Compare 5 and 1 → Swap → `[1, 5, 4, 2, 8]`
 * Compare 5 and 4 → Swap → `[1, 4, 5, 2, 8]`
 * Compare 5 and 2 → Swap → `[1, 4, 2, 5, 8]`
 * Compare 5 and 8 → No Swap
 
-#### Pass 2
+##### Pass 2
 
 * Compare 1 and 4 → No Swap
 * Compare 4 and 2 → Swap → `[1, 2, 4, 5, 8]`
 * Compare 4 and 5 → No Swap
 
-#### Final Sorted Array
+##### Final Sorted Array
 
 `[1, 2, 4, 5, 8]`
 
-### Time Complexity
+#### Time Complexity
 
 * Best Case: O(n)
 * Average Case: O(n²)
@@ -208,45 +208,45 @@ Array: `[5, 1, 4, 2, 8]`
 
 ---
 
-# 2. Selection Sort
+## 2. Selection Sort
 
-### Definition
+#### Definition
 
 Selection Sort repeatedly selects the smallest element from the unsorted part of the array and places it at the beginning.
 
-### Steps
+#### Steps
 
 1. Find the minimum element.
 2. Swap it with the first unsorted element.
 3. Repeat for remaining elements.
 
-### Example
+#### Example
 
 Array: `[64, 25, 12, 22, 11]`
 
-#### Pass 1
+##### Pass 1
 
 Smallest element = 11
 Swap with 64
 `[11, 25, 12, 22, 64]`
 
-#### Pass 2
+##### Pass 2
 
 Smallest element = 12
 Swap with 25
 `[11, 12, 25, 22, 64]`
 
-#### Pass 3
+##### Pass 3
 
 Smallest element = 22
 Swap with 25
 `[11, 12, 22, 25, 64]`
 
-#### Final Sorted Array
+##### Final Sorted Array
 
 `[11, 12, 22, 25, 64]`
 
-### Time Complexity
+#### Time Complexity
 
 * Best Case: O(n²)
 * Average Case: O(n²)
@@ -254,48 +254,48 @@ Swap with 25
 
 ---
 
-# 3. Insertion Sort
+## 3. Insertion Sort
 
-### Definition
+#### Definition
 
 Insertion Sort builds the sorted array one element at a time by inserting each element into its correct position.
 
-### Steps
+#### Steps
 
 1. Assume the first element is sorted.
 2. Pick the next element.
 3. Insert it into the correct position in the sorted portion.
 4. Repeat until sorted.
 
-### Example
+#### Example
 
 Array: `[12, 11, 13, 5, 6]`
 
-#### Step 1
+##### Step 1
 
 Insert 11 before 12
 `[11, 12, 13, 5, 6]`
 
-#### Step 2
+##### Step 2
 
 13 is already in correct position
 `[11, 12, 13, 5, 6]`
 
-#### Step 3
+##### Step 3
 
 Insert 5 at beginning
 `[5, 11, 12, 13, 6]`
 
-#### Step 4
+##### Step 4
 
 Insert 6 after 5
 `[5, 6, 11, 12, 13]`
 
-#### Final Sorted Array
+##### Final Sorted Array
 
 `[5, 6, 11, 12, 13]`
 
-### Time Complexity
+#### Time Complexity
 
 * Best Case: O(n)
 * Average Case: O(n²)
@@ -303,41 +303,41 @@ Insert 6 after 5
 
 ---
 
-# 4. Merge Sort
+## 4. Merge Sort
 
-### Definition
+#### Definition
 
 Merge Sort uses the divide-and-conquer technique. It divides the array into smaller halves, sorts them, and merges them back together.
 
-### Steps
+#### Steps
 
 1. Divide the array into two halves.
 2. Recursively sort both halves.
 3. Merge the sorted halves.
 
-### Example
+#### Example
 
 Array: `[38, 27, 43, 3, 9, 82, 10]`
 
-#### Divide
+##### Divide
 
 `[38, 27, 43]` and `[3, 9, 82, 10]`
 
-#### Further Divide
+##### Further Divide
 
 `[38] [27, 43]`
 `[3, 9] [82, 10]`
 
-#### Merge Sorted Parts
+##### Merge Sorted Parts
 
 `[27, 38, 43]`
 `[3, 9, 10, 82]`
 
-#### Final Merge
+##### Final Merge
 
 `[3, 9, 10, 27, 38, 43, 82]`
 
-### Time Complexity
+#### Time Complexity
 
 * Best Case: O(n log n)
 * Average Case: O(n log n)
@@ -345,40 +345,40 @@ Array: `[38, 27, 43, 3, 9, 82, 10]`
 
 ---
 
-# 5. Quick Sort
+## 5. Quick Sort
 
-### Definition
+#### Definition
 
 Quick Sort selects a pivot element and partitions the array into elements smaller and larger than the pivot.
 
-### Steps
+#### Steps
 
 1. Choose a pivot.
 2. Partition elements around the pivot.
 3. Recursively sort left and right partitions.
 
-### Example
+#### Example
 
 Array: `[10, 7, 8, 9, 1, 5]`
 
-#### Choose Pivot
+##### Choose Pivot
 
 Pivot = 5
 
-#### Partition
+##### Partition
 
 Smaller than 5 → `[1]`
 Larger than 5 → `[10, 7, 8, 9]`
 
-#### Recursively Sort
+##### Recursively Sort
 
 `[1] + [5] + [7, 8, 9, 10]`
 
-#### Final Sorted Array
+##### Final Sorted Array
 
 `[1, 5, 7, 8, 9, 10]`
 
-### Time Complexity
+#### Time Complexity
 
 * Best Case: O(n log n)
 * Average Case: O(n log n)
@@ -386,13 +386,13 @@ Larger than 5 → `[10, 7, 8, 9]`
 
 ---
 
-# 6. Heap Sort
+## 6. Heap Sort
 
-### Definition
+#### Definition
 
 Heap Sort uses a binary heap data structure. It first builds a max heap and repeatedly extracts the maximum element.
 
-### Steps
+#### Steps
 
 1. Build a max heap.
 2. Swap the first element with the last.
@@ -400,28 +400,28 @@ Heap Sort uses a binary heap data structure. It first builds a max heap and repe
 4. Heapify the root.
 5. Repeat until sorted.
 
-### Example
+#### Example
 
 Array: `[4, 10, 3, 5, 1]`
 
-#### Build Max Heap
+##### Build Max Heap
 
 `[10, 5, 3, 4, 1]`
 
-#### Swap Root with Last
+##### Swap Root with Last
 
 `[1, 5, 3, 4, 10]`
 
-#### Heapify
+##### Heapify
 
 `[5, 4, 3, 1, 10]`
 
-#### Continue Process
+##### Continue Process
 
 Final Sorted Array:
 `[1, 3, 4, 5, 10]`
 
-### Time Complexity
+#### Time Complexity
 
 * Best Case: O(n log n)
 * Average Case: O(n log n)
@@ -429,7 +429,7 @@ Final Sorted Array:
 
 ---
 
-# Comparison Table
+### Comparison Table
 
 | Algorithm      | Best Case  | Average Case | Worst Case | Stable |
 | -------------- | ---------- | ------------ | ---------- | ------ |
@@ -442,7 +442,7 @@ Final Sorted Array:
 
 ---
 
-# Conclusion
+### Conclusion
 
 * Bubble Sort is simple but inefficient for large data.
 * Selection Sort minimizes swaps.
@@ -496,8 +496,11 @@ Heap Sort is harder to parallelize.
 
 ### HeapSort Question (June 2022)
 Array: 16 14 15 10 12 27 28
-How many heapify operations on root?
+How many heapify operations on root for building max heap?
 - After 2 heapify operations on root, this is a valid max-heap arrangement → **Answer: 2**
+
+How many heapify operations on root during full Heap Sort?
+- **Answer: 6**
 
 ### QuickSort Partition Question (Jan 2024 / June 2023)
 Array after first partition: 2 5 1 7 9 12 11 10
@@ -527,7 +530,7 @@ A **graph** G = (V, E) has vertices V and edges E.
 **Graph Traversals:**
 - **BFS (Breadth-First Search)** — uses a QUEUE; explores level by level
 - **DFS (Depth-First Search)** — uses a STACK; goes deep before backtracking
-  - Time complexity of DFS: **Θ(|V| + |E|)** ← appeared in May 2023
+  - Time complexity of DFS & BFS: **Θ(V + E)** 
 
 ---
 
@@ -537,11 +540,20 @@ A hash table maps keys to values using a hash function.
 
 **Hash Function:** h(key) = key mod table_size
 
-**Collision:** When **multiple elements compete for the same bucket** ← appeared in June 2022 & Jan 2024
+**Collision:** When **multiple elements compete for the same bucket**
 
 **Collision Resolution:**
-- Chaining (linked lists at each slot)
+- Chaining: each hash table index stores a linked list of elements. If multiple keys hash to the same index, they are added to the linked list at that slot.
+Disadvantage: Extra memory
 - Open addressing (linear probing, quadratic probing, double hashing)
+In open addressing, all elements are stored inside the hash table itself. When collision occurs, another empty slot is searched.
+  - Linear Probing: Check the next slot sequentially until an empty slot is found. Formula: (h(k)+i)mod table_size
+  Disadvantage: Causes primary clustering (large groups form). Solution: use quadratic/double hashing
+  - Quadratic Probing: Instead of checking consecutive slots, jump quadratically. Formula: (h(k)+i^2)mod table_size
+  Disadvantage: - Some slots may be skipped
+                - Secondary Clustering: Keys with the same initial hash value follow the same probing sequence. So they still cluster together. Solution: use double hashing
+  - Double Hashing: Use a second hash function to decide jump size. Formula: (h1(k)+i×h2(k))mod table_size
+  Disadvantage: More complex
 
 ---
 
@@ -557,7 +569,7 @@ A hash table maps keys to values using a hash function.
 Infix: a + b × c - d ^ e ^ f
 - ^ is right associative, so d^e^f = d^(e^f)
 - Precedence: ^, then ×, then +/-
-- Result: a b c × + d e f ^ ^ - → **Answer: a) abc X+ def^^ -**
+- Postfix Result: a b c × + d e f ^ ^ - → **Answer: a) abc X+ def^^ -**
 
 **Prefix of A-B/(C*D^E)** (June 2023):
 Infix: A - B / (C * D ^ E)
@@ -566,7 +578,8 @@ Then /: /(B, *(C,^(D,E)))
 Then -: -(A, /(B,*(C,^(D,E))))
 Prefix: -A/B*C^DE → **Answer: c) -A/B*C^DE**
 
-**Preorder traversal result is same as:** Depth-first order ← Jan 2024
+**Preorder traversal result is same as:** Depth-first order 
+**Level Order traversal result is same as:** Breadth-first order 
 
 ---
 
@@ -628,58 +641,19 @@ A process transitions through these states:
 ---
 
 ## 2.2 CPU SCHEDULING ALGORITHMS
+TAT=CT−AT
+WT=TAT−BT
 
 ### FCFS (First Come First Served)
 - Non-preemptive
 - Processes execute in order of arrival
-- Simple but can cause convoy effect
+- Simple but can cause *convoy effect*: short processes wait a long time for a single, large, CPU-intensive process to finish
 
 **FCFS Average Waiting Time Calculation (May 2023):**
 P1 (arrives 0, burst 4), P2 (arrives 2, burst 6), P3 (arrives 4, burst 8), P4 (arrives 6, burst 2)
 - P1 runs: 0–4. P2 runs: 4–10. P3 runs: 10–18. P4 runs: 18–20
 - Waiting times: P1=0, P2=4-2=2, P3=10-4=6, P4=18-6=12
-- Average = (0+2+6+12)/4 = 20/4 = **5 → wait, let me recalculate.**
-- Actually: (0 + 2 + 6 + 12)/4 = 20/4 = 5... but the answer key says 9.75
-- Re-reading: P1 burst=4, P2 burst=5 (not 6!), P3 burst=8, P4 burst=2
-- P1: 0-4. P2: 4-9. P3: 9-17. P4: 17-19
-- Wait: P1=0, P2=4-2=2, P3=9-4=5+wait? P3 arrives at 4, starts at 9, wait=5... hmm
-- Actually wait time = start time - arrival time
-- P1: 0-0=0, P2: 4-2=2, P3: 9-4=5+... let me redo: P3 arrives at 4, starts at 9: wait=5? but then... 
-- Oh wait: P2 burst=5 in one version and 6 in another. Let me use burst=6 from the image:
-- P1(0,4), P2(2,6), P3(4,8), P4(6,2): P1:0-4, P2:4-10, P3:10-18, P4:18-20
-- Waits: P1=0, P2=2, P3=6, P4=12. Average=(0+2+6+12)/4=20/4=5
-- Hmm, that gives 5, not 9.75. The answer key says 9.75. Let me use burst times as stated in the question itself: P1=4, P2=5 (it says 5 in the Q paper!), P3=8, P4=2:
-- P1:0-4, P2:4-9, P3:9-17, P4:17-19
-- Waits: P1=0, P2=4-2=2, P3=9-4=5, P4=17-6=11
-- Average=(0+2+5+11)/4=18/4=4.5... still not 9.75
-- Oh wait, the question in Q_may2023 lists: P2 burst=5, but in the answer: c) 9.75. Let me try using turnaround time not wait time... no.
-- Actually, maybe P2 burst=6 in the question: (0+2+6+12)/4=5. Still 5.
-- The answer key may have a different interpretation. The answer is c) 9.75 according to the answer sheet image.
-- Actually maybe P1 burst=4, P2 burst=6, P3 burst=8, P4 burst=2 (from the image page 3):
-  Wait times: P1=0, P2=2, P3=6, P4=12 → avg=5
-  This doesn't match 9.75 either...
-
-Actually looking again at the image: the answer shows "Answer: c) 9.75" with explanation:
-"The waiting time for each process can be calculated by summing up the burst times of all previous processes. The waiting times for P1, P2, P3, and P4 are 0, 2, 6, and 12, respectively. The average waiting time is (0 + 2 + 6 + 12) / 4 = 9.75."
-
-Wait: 0+2+6+12=20, 20/4=5, not 9.75. The explanation itself is wrong mathematically! Unless the burst times are different. Let me re-read the question: P1 burst=4, P2 burst=6, P3 burst=8, P4 burst=2... Nope. 
-
-Actually: 0+2+6+12=20, 20/4=5. The answer key's arithmetic is wrong. It seems the answer key has a mistake. But since the answer is c) 9.75 and will be accepted...
-
-Actually wait, could P1=0, P2=2+4=6? No...
-
-Let me try: if the schedule is P1 arrives 0 burst 4, P2 arrives 2 burst 6, P3 arrives 4 burst 8, P4 arrives 6 burst 2:
-Completion times: P1=4, P2=10, P3=18, P4=20
-TAT: P1=4-0=4, P2=10-2=8, P3=18-4=14, P4=20-6=14
-Average TAT = (4+8+14+14)/4 = 40/4 = 10
-
-Wait times: TAT - burst time:
-P1: 4-4=0, P2: 8-6=2, P3: 14-8=6, P4: 14-2=12
-Average wait = (0+2+6+12)/4 = 20/4 = **5**
-
-The answer key says 9.75 but the math gives 5. This appears to be a mistake in the answer key but since it's an MCQ and option c is 9.75 in the choice list, I think the question was probably different in the actual exam.
-
-For the study material, I'll just explain how to calculate FCFS and note the formula, not the specific answer of that problem.
+- Average = (0+2+6+12)/4 = 20/4 = 5 
 
 ### Round Robin (RR)
 **Round Robin Turnaround Time (May 2023):**
@@ -702,34 +676,19 @@ Queue: P1(8), P2(4), P3(9), P4(5), P5(2), quantum=3
 23-25: P1 done (rem=0)
 25-28: P3 done (rem=0)
 
-P3: arrives 0, completes at 28. TAT = 28. Hmm, answer says 13. Let me reconsider.
-
-Oh wait, the answer key says d) 13. Let me try again with arrival time 0 for all:
-
-t=0: P1 runs, remaining becomes 8-3=5
-t=3: P2 runs, remaining 4-3=1
-t=6: P3 runs, remaining 9-3=6
-t=9: P4 runs, remaining 5-3=2
-t=12: P5 runs, remaining 2 (runs only 2 since <=quantum), done at t=14
-t=14: P1, remaining 5-3=2
-t=17: P2, remaining 1-1=0, done at t=18
-t=18: P3, remaining 6-3=3
-t=21: P4, remaining 2-2=0, done at t=23
-t=23: P1, remaining 2-2=0, done at t=25
-t=25: P3, remaining 3-3=0, done at t=28
-
-P3 turnaround = 28-0 = 28... but answer is 13.
-
-Hmm, let me try different quantum or processes. With quantum=3 and P3 burst=9, it takes exactly 3 rounds for P3 (9/3=3). In a simple calculation: P3 first runs at t=6, second at t=18, third at t=25. Done at t=28.
-
-TAT=28. But the answer key says 13. That seems impossible unless I'm misreading. Let me just go with the answer key's answer (d) = 13) and note that the student should practice RR calculations.
-
-Actually... let me try assuming all processes arrive at time 0 and use a slightly different assignment:
-Actually wait. I note the question says the answer is d) 13. This is the May 2023 exam. The answer key image shows d)13. I'll just trust the answer key.
-
-OK I'll just include the formula for RR and note that P3's turnaround is 13 in that example. Actually for the purposes of the study material, let me explain the technique and skip the specific calculation error.
+P3: arrives 0, completes at 28. TAT = 28.
 
 ### Shortest Job First (SJF) / Shortest Remaining Time First (SRTF)
+| Feature          | SJF (Shortest Job First)   | SRTF (Shortest Remaining Time First) |
+| ---------------- | -------------------------- | ------------------------------------ |
+| Type             | Non-preemptive             | Preemptive                           |
+| Selection Basis  | Smallest burst time        | Smallest remaining time              |
+| CPU Interruption | No                         | Yes                                  |
+| Preemption       | Not allowed                | Allowed                              |
+| Decision Time    | Only when CPU becomes free | Whenever new process arrives         |
+| Response Time    | Higher                     | Better                               |
+| Complexity       | Simpler                    | More complex                         |
+
 Context switches with SRTF (June 2023):
 3 processes: P1 (arrives 0, burst 10), P2 (arrives 2, burst 20), P3 (arrives 6, burst 30)
 SRTF: At t=0, only P1, runs.
