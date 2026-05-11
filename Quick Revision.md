@@ -451,6 +451,49 @@ Final Sorted Array:
 * Quick Sort is fast in practice and widely used.
 * Heap Sort provides guaranteed O(n log n) performance.
 
+## Reason for merge sort being used more even tho heap sort has same Time Complexity and constant space complexity while merge sort has O(log n) space complexity
+1. Better Cache Performance
+Merge Sort accesses memory sequentially.
+Example:
+Left array → Right array → Merge
+This is cache-friendly because modern CPUs work faster with continuous memory access.
+Heap Sort jumps around the array due to heap structure:
+Parent ↔ Child ↔ Another child
+This causes more cache misses and slower execution.
+Result:
+Merge Sort is usually faster in practice even if theoretical complexity is same.
+
+2. Stable Sorting
+Merge Sort is stable.
+If two elements have same value, their original order is preserved.
+Example:
+(5,A) (5,B)
+After Merge Sort:
+(5,A) (5,B)
+Heap Sort is not stable.
+This matters in databases and multi-level sorting.
+
+3. Better for Linked Lists
+Merge Sort works very efficiently on linked lists because merging does not require random access.
+Heap Sort requires array indexing.
+So Merge Sort is preferred for:
+Linked lists
+External sorting
+Large datasets
+
+4. Used in External Sorting
+When data is too large for RAM:
+Merge Sort can sort chunks separately
+Then merge files efficiently
+This is why databases use Merge Sort.
+Heap Sort is not suitable for disk-based sorting.
+
+5. Parallel Processing
+Merge Sort divides arrays into independent halves:
+Left Half    Right Half
+Both can be sorted simultaneously using multiple processors.
+Heap Sort is harder to parallelize.
+
 ### HeapSort Question (June 2022)
 Array: 16 14 15 10 12 27 28
 How many heapify operations on root?
