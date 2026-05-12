@@ -1544,7 +1544,7 @@ Which have same expressive power?
 
 ---
 
-## SOLID Principles
+## 4.8 SOLID Principles
 The SOLID principles are five core object-oriented design principles that help make software easier to maintain, extend, test, and understand.
 
 They were popularized by Robert C. Martin.
