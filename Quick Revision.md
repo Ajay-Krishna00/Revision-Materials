@@ -1544,6 +1544,218 @@ Which have same expressive power?
 
 ---
 
+## SOLID Principles
+The SOLID principles are five core object-oriented design principles that help make software easier to maintain, extend, test, and understand.
+
+They were popularized by Robert C. Martin.
+
+### S — Single Responsibility Principle (SRP)
+
+A class should have only one reason to change.
+
+A class should do one job only.
+
+Bad Example
+class User:
+    def save_to_db(self):
+        pass
+
+    def send_email(self):
+        pass
+
+This class handles:
+
+user data
+database logic
+email logic
+
+Too many responsibilities.
+
+Better
+class User:
+    pass
+
+class UserRepository:
+    def save(self, user):
+        pass
+
+class EmailService:
+    def send_email(self, user):
+        pass
+
+Now each class has one responsibility.
+
+### O — Open/Closed Principle (OCP)
+
+Software entities should be open for extension, but closed for modification.
+
+You should add new behavior without changing existing code.
+
+Bad Example
+class Discount:
+    def calculate(self, customer_type):
+        if customer_type == "regular":
+            return 10
+        elif customer_type == "premium":
+            return 20
+
+Every new customer type requires modifying the class.
+
+Better
+class Discount:
+    def calculate(self):
+        pass
+
+class RegularDiscount(Discount):
+    def calculate(self):
+        return 10
+
+class PremiumDiscount(Discount):
+    def calculate(self):
+        return 20
+
+Now you extend behavior via new classes.
+
+### L — Liskov Substitution Principle (LSP)
+
+Subtypes should be replaceable for their base types without breaking behavior.
+
+If class B extends class A, you should be able to use B wherever A is expected.
+
+Bad Example
+class Bird:
+    def fly(self):
+        pass
+
+class Ostrich(Bird):
+    def fly(self):
+        raise Exception("Cannot fly")
+
+An ostrich is a bird, but it breaks expectations.
+
+Better
+class Bird:
+    pass
+
+class FlyingBird(Bird):
+    def fly(self):
+        pass
+
+class Sparrow(FlyingBird):
+    pass
+
+class Ostrich(Bird):
+    pass
+
+Now behavior matches reality.
+
+### I — Interface Segregation Principle (ISP)
+
+Clients should not be forced to depend on methods they do not use.
+
+Avoid large interfaces.
+
+Bad Example
+class Worker:
+    def work(self):
+        pass
+
+    def eat(self):
+        pass
+
+class Robot(Worker):
+    def eat(self):
+        raise Exception("Robots don't eat")
+
+Robot is forced to implement unnecessary behavior.
+
+Better
+class Workable:
+    def work(self):
+        pass
+
+class Eatable:
+    def eat(self):
+        pass
+
+class Human(Workable, Eatable):
+    pass
+
+class Robot(Workable):
+    pass
+
+Smaller, focused interfaces.
+
+### D — Dependency Inversion Principle (DIP)
+
+High-level modules should not depend on low-level modules. Both should depend on abstractions.
+
+Depend on interfaces, not concrete implementations.
+
+Bad Example
+class MySQLDatabase:
+    def connect(self):
+        pass
+
+class App:
+    def __init__(self):
+        self.db = MySQLDatabase()
+
+App is tightly coupled to MySQL.
+
+Better
+class Database:
+    def connect(self):
+        pass
+
+class MySQLDatabase(Database):
+    def connect(self):
+        pass
+
+class App:
+    def __init__(self, db: Database):
+        self.db = db
+
+Now you can swap databases easily.
+
+### Quick Memory Trick
+| Letter | Principle             | Meaning                           |
+| ------ | --------------------- | --------------------------------- |
+| S      | Single Responsibility | One job per class                 |
+| O      | Open/Closed           | Extend without modifying          |
+| L      | Liskov Substitution   | Subclasses should behave properly |
+| I      | Interface Segregation | Small focused interfaces          |
+| D      | Dependency Inversion  | Depend on abstractions            |
+
+### Why SOLID Matters
+
+Using SOLID leads to:
+
+cleaner architecture
+easier testing
+better scalability
+lower coupling
+higher maintainability
+easier refactoring
+
+These principles are heavily used in:
+
+backend systems
+enterprise applications
+microservices
+frameworks like Spring Framework, Django, and ASP.NET Core.
+Simple Real-World Analogy
+
+### Think of a restaurant:
+
+SRP → Chef cooks, cashier handles billing
+OCP → Add new menu items without redesigning kitchen
+LSP → Any waiter can replace another waiter
+ISP → Cashier shouldn’t need cooking skills
+DIP → Restaurant uses a payment interface, not tied to one bank
+
+---
+
 # PART 5: THEORY OF COMPUTATION (Q41–Q50)
 
 ## 5.1 FORMAL LANGUAGES AND AUTOMATA BASICS
