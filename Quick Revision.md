@@ -1042,9 +1042,7 @@ A process copied from **main memory to secondary memory** on basis of requiremen
 ## 3.1 ADDRESSING MODES
 
 **Addressing modes** determine how the operand address is calculated.
-
-# Addressing Modes
-
+ 
 | Mode | Description | Use | Example |
 |------|-------------|-----|---------|
 | **Immediate Addressing** | Operand value is directly present in the instruction | Used for constant values | `SUB A, #10` → `#10` is immediate data |
@@ -1207,14 +1205,13 @@ What operation is this?
 ## 3.7 PIPELINING
 
 **Pipeline hazards:**
-**Data Hazard:** Current instruction depends on result of previous instruction that hasn't completed ← May 2023 Answer: a
-
+**Data Hazard:** Current instruction depends on result of previous instruction that hasn't completed
 **Control Hazard:** Branch instructions - next instruction unknown until branch resolved
 **Structural Hazard:** Two instructions need same hardware resource simultaneously
 
-**To minimize control hazards:** Branch prediction ← May 2023 Answer: a) Branch prediction
+**To minimize control hazards:** Branch prediction
 
-**To reduce memory latency:** Out-of-order execution ← May 2023 Answer: c (or instruction-level parallelism)
+**To reduce memory latency:** Out-of-order execution instruction-level parallelism
 
 **Register Renaming in pipelined processors:**
 - Done **to handle certain kinds of hazards** (specifically WAW and WAR hazards) ← June 2022 & Jan 2024 Answer: c
@@ -1287,6 +1284,9 @@ Normalization removes data redundancy and anomalies by organizing data into tabl
 - **Every relation in BCNF is also in 3NF** ← June 2022 & Jan 2024
 - If a relation is in BCNF, it is also in: **3NF, 2NF, 1NF** ← June 2023 Answer: b) 3NF
 
+## 4NF:
+- free from non-trivial multivalued dependencies (MVDs)
+
 **Important false statement (Jan 2024):**
 "The prime attribute can depend transitively on any key in the case of a relation that is in its BCNF" → This is **FALSE** - prime attributes cannot depend transitively in BCNF ← Answer: d (it's the FALSE option)
 
@@ -1306,8 +1306,13 @@ Normalization removes data redundancy and anomalies by organizing data into tabl
   - AB→CE: AB is superkey ✓
   - E→AB: E is superkey ✓  
   - C→D: C is non-superkey, D is non-prime → violates 3NF
-- But in 2NF: partial dependency? The key is AB (multi-attribute). A→? No FD given that A alone determines something in the set...
-- Actually the answer is b) 2NF from the June 2023 answer key
+- Candidate key:AB
+Do we have:
+A → something
+or
+B → something
+No.
+So no partial dependency exists.Thus:Relation satisfies 2NF
 
 ---
 
@@ -1518,6 +1523,15 @@ Database: 1 million records, block size 4KB, search key 12 bytes, pointer 8 byte
 B* Trees are BALANCED because:
 **"The lengths of paths from root to all leaf nodes are all equal"** ← Answer: a
 
+| Feature           | B+ Tree           | B* Tree            |
+| ----------------- | ----------------- | ------------------ |
+| Node Fullness     | At least 50% full | At least 66% full  |
+| Splitting         | Immediate split   | Redistribute first |
+| Space Utilization | Good              | Better             |
+| Complexity        | Simpler           | More complex       |
+| Disk Access       | More              | Less               |
+| Efficiency        | High              | Higher             |
+
 ---
 
 ## 4.7 RELATIONAL QUERY LANGUAGES (Jan 2024)
@@ -1526,14 +1540,7 @@ Which have same expressive power?
 2. Tuple Relational Calculus (restricted to safe expressions)
 3. Domain Relational Calculus (restricted to safe expressions)
 
-**All three are equivalent in expressive power** ← Answer: the option that says all three, which is "I and II only"? No. 
-Answer key says I and II only... Wait. The answer is "I and II only" for Jan 2024. But all three are equivalent. This might be a trick: answer is **I, II, and III** (all equivalent) but looking at options: the choice is a) II and III only, b) I and II only, c) I and III only, d) II and III. 
-
-Actually looking at the actual answer key for Jan 2024 (A_jan2024.pdf): Q19 = d. Hmm, d) II and III only in the answer key says "d" which from the original answer key is the last option. Looking at the question options: a) II and III only, b) I and II only, c) I and III only, d) II and III... the answer is d) which is the last option.
-
-All three languages (RA, TRC safe, DRC safe) are equivalent. The answer should be "I, II, and III" but since there's no such option, "I and II only" might be the KTU standard answer.
-
-Based on A_jan2024.pdf answer key showing Q19=d, and the options in Q-jan2024.pdf where option d appears to be "II and III only", the answer is d).
+**All three are equivalent in expressive power** ← Answer: the option that says all three, 
 
 ---
 
